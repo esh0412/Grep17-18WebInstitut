@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Prestation;
 use App\Category;
+use App\Institut;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Http\Request;
 
@@ -12,10 +13,10 @@ class PrestationsController extends Controller
     public function index(){
 
       $prestations = Prestation::all();
-      $categories = Category::all();
+      $instituts= Institut::all();
       $groupprestation = Prestation::all()->groupBy('category_id');
 
-      return view('prestations.index', compact('prestations', 'categories', 'groupprestation'));
+      return view('prestations.index', compact('prestations', 'instituts','groupprestation'));
 
     }
 
@@ -54,7 +55,6 @@ class PrestationsController extends Controller
 
 
     }
-
 
 
 

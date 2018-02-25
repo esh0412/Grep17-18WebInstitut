@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Prestation extends Model
 {
-    public function category(){
-      return $this->belongsTo('App\Category');
+    
+    public function rendezvous(){
+      return $this->belongsToMany('App\Rendezvous');
     }
 }

@@ -26,4 +26,12 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function rendezvous()
+    {
+      /**
+     * Prendre le rendezvous associé à l'utilisateur.
+     */
+      return $this->hasOne('App\Rendezvous');
+    }
 }
